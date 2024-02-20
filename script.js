@@ -4,8 +4,8 @@ apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q='
 const searchBox = document.querySelector('.search input')
 const searchBtn = document.querySelector('.search button')
 const weatherIcon = document.querySelector('.weather-icon')
-
-
+const weather = document.querySelector('.weather')
+const errorMessage = document.querySelector('.error')
 
 async function checkWeather(city){
 
@@ -14,7 +14,11 @@ async function checkWeather(city){
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     var data = await response.json();
     console.log(data)
-    
+
+    if(response.status == 404){
+        errorMessage.style.display = 'block'
+        weather.style.display = 'none'
+    }else{
 
     document.querySelector('.city').innerHTML = data.name;
     document.querySelector('.temp').innerHTML = Math.round(data.main.temp ) + '°c'
@@ -29,9 +33,15 @@ async function checkWeather(city){
         weatherIcon.src = "images/rain.png"
     }else if(data.weather[0].main == 'Drizzle'){
         weatherIcon.src = "images/drizzle.png"
-    } else if(data.weather[0].main == 'Mst'){
+    } else if(data.weather[0].main == 'Mist'){
         weatherIcon.src = "images/mist.png"
     }
+
+    weather.style.display = 'block'
+    errorMessage.style.display = 'none'
+    }
+
+
 
 
 
