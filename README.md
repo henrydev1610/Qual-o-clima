@@ -1,5 +1,8 @@
-# Qual é o Clima
+# Qual é o Clima?
 
+
+![git-tempo](https://github.com/henrydev1610/Qual-o-clima/assets/116370540/e24de3b3-d259-4266-89b5-8a470c83315c)
+[Link para a Página](https://henrydev1610.github.io/Qual-o-clima/)
 
 ## Descrição do Projeto
 O "Qual é o Clima" é um aplicativo de previsão do tempo desenvolvido com HTML, CSS e JavaScript. Ele fornece informações precisas sobre as condições climáticas atuais e futuras, ajudando os usuários a se prepararem para o tempo.
